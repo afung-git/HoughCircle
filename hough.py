@@ -2,11 +2,11 @@ import cv2
 import numpy as np
 
 
-imgfile = './detect_circles_soda.jpg'
+imgfile = 'images/detect_circles_soda.jpg'
 
 image = cv2.imread(imgfile)
 output = image.copy()
-# print(image)
+print(image)
 imagegray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
 
 circles = cv2.HoughCircles(imagegray, cv2.HOUGH_GRADIENT, 50, 1)

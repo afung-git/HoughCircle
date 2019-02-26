@@ -25,9 +25,10 @@ def findCircles(accumulator, threshold, minRadius):
         #         else:
         #             accumulator[(x-i, y -j, r)] = 0
         #             accumulator[(x+i, y +j, r)] = 0
+    print(np.max(accumulator))
     return circle
 
-imgfile = 'images/multiple.jpg'
+imgfile = 'images/test2_400.jpg'
 
 image = cv2.imread(imgfile)
 output = image.copy()
@@ -63,9 +64,9 @@ edgePts = np.vstack([ximg,yimg]).T
 
 # print(edgePts)
 xMax = gray.shape[0]
-yMax = gray.shape[0]
+yMax = gray.shape[1]
 rMax = int(math.sqrt((xMax)**2 + (yMax)**2)) 
-threshold = 36
+threshold = 90
 # print(rMax)
 acc = np.zeros((xMax,yMax,rMax), dtype = int)
 
@@ -96,5 +97,6 @@ if results is not None:
 # plt.imshow(acc[:,:,20], cmap="gray")
 # plt.show()
 cv2.imshow("output", np.hstack([image, output]))
+# cv2.imshow("edges", edges)
 cv2.waitKey()
 cv2.destroyAllWindows()

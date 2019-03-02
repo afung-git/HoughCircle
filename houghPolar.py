@@ -30,7 +30,7 @@ def findCircles(accumulator, threshold, minRadius):
     print(np.max(accumulator))
     return circle
 
-imgfile = 'images/test2_200.jpg'
+imgfile = 'images/two.jpg'
 
 image = cv2.imread(imgfile)
 output = image.copy()

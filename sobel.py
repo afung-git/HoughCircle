@@ -36,7 +36,7 @@ edgePts = np.vstack([ximg,yimg]).T
 
 print(edgePts.shape)
 
-testPoint = edgePts[150]
+testPoint = edgePts[100]
 
 print("Process Time(s):", time.time()-startTime)
 print(orientation[(testPoint[0], testPoint[1])]*180/np.pi)
@@ -54,7 +54,7 @@ p2X = (int)(testPoint[1] + length * np.cos(orientation[testPoint[1], testPoint[0
 p2Y = (int)(testPoint[0] - length * np.sin(orientation[testPoint[1], testPoint[0]]))
 
 # print(p2X)
-cv2.line(output,(testPoint[1],testPoint[0]), (p2X, p2Y), (0,0,255), 1)
+# cv2.line(output,(testPoint[1],testPoint[0]), (p2X, p2Y), (0,0,255), 1)
 
 cv2.imshow("output", np.hstack([image, output]))
 

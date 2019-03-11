@@ -36,7 +36,7 @@ edgePts = np.vstack([ximg,yimg]).T
 
 print(edgePts.shape)
 
-testPoint = edgePts[100]
+testPoint = edgePts[20]
 
 print("Process Time(s):", time.time()-startTime)
 print(orientation[(testPoint[0], testPoint[1])]*180/np.pi)

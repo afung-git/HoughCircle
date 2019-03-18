@@ -30,7 +30,7 @@ def findCircles(accumulator, threshold, minRadius):
     print(np.max(accumulator), " new Max")
     return circle
 
-imgfile = 'images/test1_400.jpg'
+imgfile = 'images/test1.jpg'
 
 image = cv2.imread(imgfile)
 output = image.copy()
@@ -91,8 +91,12 @@ acc = np.zeros((aMax,bMax, rMax), dtype=int)
 # thetaRad = [i*np.pi/180 for i in range(360)]
 # print(thetaRad)
 
+# ---- This is only the case for a clean black and white image
 # Angles for circle zero is verticle and angles increment counter clockwise
 # angles for gradient zero is left horizonal and increment to +180 clockwise, increment to -180 counter clockwise
+
+
+
 # i = edgePts[130]
 # theta = orientation[(i[0], i[1])]*180/np.pi
 # print(theta, " grad angle")
@@ -102,7 +106,6 @@ startTime = time.time()
 for i in edgePts:
     for r in range(5, rMax):
         theta = 90 - orientation[(i[0], i[1])]*180/np.pi
-        # theta = 180
         a = i[0] - int(r*np.cos(theta*np.pi/180))
         b = i[1] - int(r*np.sin(theta*np.pi/180))
     #         print(a,b, i,round(r*np.sin(i*np.pi/180)) )

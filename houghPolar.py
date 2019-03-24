@@ -15,7 +15,7 @@ def findCircles(accumulator, threshold, minRadius):
     
     circle = []
     x = y = r = 0
-    while accumulator[(findMax(accumulator))] > threshold:
+    while accumulator[(findMax(accumulator))] > threshold:  
         # accumulator[x,y,r)] = 0
         (x,y,r) = findMax(accumulator)
         circle.append((x,y,r))
@@ -113,7 +113,7 @@ for i in edgePts:
         if a >= 0 and a < aMax and b >= 0 and b < bMax:
             acc[(a,b,r)] += 1
                 
-print("Voting Time(2):",time.time()-startTime)
+print("Voting Time(s):",time.time()-startTime)
 # print(edge)
 
 # cv2.circle(output, (i[1],i[0]), 1, (255,0,0), 2)
